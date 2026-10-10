@@ -1,0 +1,6 @@
+{
+  "name":"manuguard-ai","version":"1.0.0","private":true,"type":"module",
+  "scripts":{"dev":"concurrently \"vite --host 0.0.0.0\" \"tsx watch server/index.ts\"","build":"tsc && vite build","start":"tsx server/index.ts"},
+  "dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","typescript":"latest","react":"latest","react-dom":"latest","express":"latest","cors":"latest","tsx":"latest","concurrently":"latest","lucide-react":"latest"},
+  "devDependencies":{"@types/react":"latest","@types/react-dom":"latest","@types/express":"latest","@types/cors":"latest","@types/node":"latest"}
+}
