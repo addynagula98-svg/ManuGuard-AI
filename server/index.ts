@@ -178,4 +178,16 @@ app.post('/api/reset', (req, res) => {
   res.json({ok: true});
 });
 
-app.listen(3001, () => console.log('ManuGuard API running at http://localhost:3001'));
+// Serve the production React application
+const distPath = path.resolve(__dirname, '../dist');
+
+app.use(express.static(distPath));
+
+app.get('/{*path}', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
+const PORT = Number(process.env.PORT) || 3001;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`ManuGuard API running on port ${PORT}`);
+});
