@@ -51,6 +51,8 @@ function write(v: unknown) {
   fs.writeFileSync(dataFile, JSON.stringify(v, null, 2));
 }
 
+fs.mkdirSync(path.dirname(dataFile), { recursive: true });
+
 if (!fs.existsSync(dataFile)) write(seed);
 
 function normalizeNote(note: unknown) {
